@@ -26,4 +26,16 @@ const createImageGallery = images => {
   image_container.innerHTML = output;
 };
 
+const changeImage = e => {
+  const image = image_gallery.children[0];
+  if (e.target.src) {
+    image.classList.add("animate-entrance");
+    image.src = e.target.src;
+    setTimeout(() => {
+      image.classList.remove("animate-entrance");
+    }, 800);
+  }
+};
+
 document.addEventListener("DOMContentLoaded", showImages);
+image_container.addEventListener("click", changeImage);
