@@ -26,7 +26,7 @@ const createImageGallery = images => {
   image_container.innerHTML = output;
 };
 
-const changeImage = e => {
+const changeBigImage = e => {
   const image = image_gallery.children[0];
   if (e.target.src) {
     image.classList.add("animate-entrance");
@@ -38,4 +38,4 @@ const changeImage = e => {
 };
 
 document.addEventListener("DOMContentLoaded", showImages);
-image_container.addEventListener("click", changeImage);
+image_container.addEventListener("click", changeBigImage);

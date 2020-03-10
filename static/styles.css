@@ -1,5 +1,5 @@
 /* Cool Grey
-  Cool Grey 0: 
+  Cool Grey 0: #1C2A39
   Cool Grey 1: #2C3A49
   Cool Grey 2: #3C4A59
   Cool Grey 3: #4C5A69
@@ -30,7 +30,7 @@ body {
 }
 
 main {
-  background-color: #3c4a59;
+  background-color: #1c2a39;
   padding: 0 0.5rem;
   height: 100vh;
 }
@@ -44,7 +44,6 @@ main {
 }
 
 .image--selection {
-  background-color: #8c9aa9;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
   justify-content: center;
