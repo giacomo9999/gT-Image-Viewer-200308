@@ -35,15 +35,16 @@ main {
   height: 100vh;
 }
 
-.image--gallery {
-  width: 100%;
+.big-image {
+  width: 25%;
   height: 32rem;
   display: block;
   margin: auto;
-  border: 5px solid #222;
+  border: solid #1c2a39;
+  border-width: 70px 0px 25px;
 }
 
-.image--selection {
+.thumbnail-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
   justify-content: center;
@@ -55,8 +56,7 @@ main {
   height: 8rem;
   display: block;
   margin: auto;
-  margin-bottom: 0.5rem;
-  border: 5px solid #222;
+  border: 10px solid #1c2a39;
   object-fit: cover;
   cursor: pointer;
 }
@@ -65,21 +65,6 @@ main {
   text-align: center;
   margin-top: 20%;
   color: #fff;
-}
-
-.animate-entrance {
-  animation: BounceIn 0.8s;
-}
-
-@keyframes BounceIn {
-  0% {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
 }
 
 h1,
@@ -94,29 +79,9 @@ h4 {
   margin: 5px;
 }
 
-.dark {
-  /* color 0 */
-  color: black;
-}
-
-/* .container-outer {
-  width: 30%;
-  padding: 10px;
-  margin: 20px auto 10px;
-  background-color: #6c7a89;
-  border-radius: 5px;
-}
-
-.container-inner {
-  width: 85%;
-  margin: 10px auto 5px;
-  background-color: #3c4a59;
-  padding: 10px;
-  border-radius: 5px;
-} */
-
 /* Button (General Use) */
 button {
+  margin: 14px 5px 0 5px;
   background-color: #5c6a79;
   color: white;
   padding: 1px 10px;
@@ -128,53 +93,31 @@ button {
   border-radius: 5px;
 }
 
-/* Form (General Use)*/
+/* Navbar */
 
-.h-form {
-  width: 50%;
-  margin: 25px auto;
-  /* border color 9 */
-  border: 1px solid #acbac9;
-  padding: 15px;
-  box-sizing: border-box;
-}
-
-.h-form .h-label {
-  display: block;
-  padding: 7px;
-  box-sizing: border-box;
-  /* background color 8 */
-  background-color: #9caab9;
-}
-
-.h-form .h-input {
-  display: block;
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #070a0e;
+  position: fixed;
+  top: 0;
   width: 100%;
-  box-sizing: border-box;
-  height: 30px;
-  padding: 15px;
-  font-size: 14px;
 }
 
-.h-form .h-btn {
-  /* background color 6 */
-  background-color: #7c8a99;
-  color: white;
+li {
+  float: right;
+}
+
+li a {
   display: block;
-  margin: 15px auto;
-  border: none;
-  padding: 4px 10px;
-  font-size: 14px;
-  font-family: "Oswald", sans-serif;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
-.h-form .h-btn:hover {
-  /* background color 8 */
-  background-color: #9caab9;
-  cursor: pointer;
-}
-
-.h-form .h-btn:active {
-  /* background color 4 */
-  background-color: #5c6a79;
+li a:hover:not(.active) {
+  background-color: #111;
 }
