@@ -111,13 +111,6 @@ li {
   display: inline;
 }
 
-li a {
-  margin: 20px;
-  color: white;
-  text-decoration: none;
-  padding: 30px 16px;
-}
-
 .greyscale-toggler {
   margin: 20px;
   color: white;
@@ -125,12 +118,19 @@ li a {
   padding: 30px 16px;
 }
 
-li a:hover {
+.greyscale-toggler:hover {
   color: black;
   background-color: #bccad9;
 }
 
-.greyscale-toggler:hover {
+.image-size-toggler {
+  margin: 20px;
+  color: white;
+  text-decoration: none;
+  padding: 30px 16px;
+}
+
+.image-size-toggler:hover {
   color: black;
   background-color: #bccad9;
 }
