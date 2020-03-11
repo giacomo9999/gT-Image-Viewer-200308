@@ -11,8 +11,21 @@ If you'd like to try this app out, here is what to do:
 5. Navigate in the browser to http://localhost:3000/ . The interface (a grid of thumbnails and a large selected image) should display in the browser window.
 
 Once the app is running:
-    -Clicking an image thumbnail will display the full image at the top of the window.
-    -Clicking the words "Display in Greyscale: OFF" will toggle all the images to display in greyscale mode. Clicking the words again will toggle all the images back to RGB.
-    -Clicking the words "Displaying ALL Images" will toggle the display to show _only_ those images whose full size is greater than 100 pixels x 100 pixels. Clicking the words again will display _all_ the images, regardless of size.
+
+- Clicking an image thumbnail will display the full image at the top of the window.
+- Clicking the words "Display in Greyscale: OFF" will toggle all the images to display in greyscale mode. Clicking the words again will toggle all the images back to RGB.
+- Clicking the words "Displaying ALL Images" will toggle the display to show _only_ those images whose full size is greater than 100 pixels x 100 pixels. Clicking the words again will display _all_ the images, regardless of size.
+
+*FEATURES I SURELY WOULD'VE IMPLEMENTED, HAD THERE ONLY BEEN ENOUGH TIME:*
+
+- Cache the image data so that index.js only needs to make ONE request to the backend. Right now index.js makes a GET request to the backend everytime the "grayscale" and "filter by size" functions are called.  If the images were sorted by size and cached the first time they came in, the backend would *only* need to be called the first time the page loads. That occurred to me about fifteen minutes ago. :P
+- Build out the "filter by size" functionality so users can specify more precisely the size in pixels of the images they want displayed. This would entail building some kind of modal or pull-down form to input the numbers, and I just didn't have the time to do that.
+- Get the "big" image to display in correct proportion (right now it's always coerced into a square format).  Again, I just ran short of time.
+- Display the thumbnails in a paginated or "carousel" format.  This is, I think, probably the easiest of my proposed changes...but again, no time.
+
+Anyway, it was great to have the opportunity to make this...and it was fun to work on. Hope you enjoy it/find it useful!
+
+JG
+
 
 

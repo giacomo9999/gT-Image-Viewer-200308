@@ -11,7 +11,9 @@ imageSizeToggler.innerHTML = "Display ALL Images";
 const loading = `<h1 class="loader">Loading...</h1>`;
 
 let greyScaleOn = false;
-let showOnlyBigImages = false;
+let showOnlyLargerImages = false;
+
+let bigImageSrc = "https://picsum.photos/id/12/300/200";
 
 // Make GET request to server.js and call buildImageGallery function (which renders thumbnails to screen)
 const showImages = () => {
@@ -32,7 +34,7 @@ const buildImageGallery = images => {
   let output = "";
   let colorSetting = greyScaleOn === true ? "?grayscale" : "";
 
-  if (showOnlyBigImages) {
+  if (showOnlyLargerImages) {
     console.log("Showing only big images...");
     images = images.filter(
       image =>
@@ -40,7 +42,7 @@ const buildImageGallery = images => {
     );
   }
 
-  big_image.innerHTML = `<img src="${images[0] +
+  big_image.innerHTML = `<img src="${bigImageSrc +
     colorSetting}" class="big-image" alt="image description">`;
   images.forEach(image => {
     output += `<img src="${image +
@@ -53,20 +55,25 @@ const buildImageGallery = images => {
 
 const changeBigImage = e => {
   console.log("Changing Image...", e.target.src);
+
   const image = big_image.children[0];
   if (e.target.src) {
     image.src = e.target.src;
+    bigImageSrc = e.target.src;
   }
 };
 
 // Set global variable and inner text for "Minimum Image Size"
 const toggleMinImageSize = () => {
-  showOnlyBigImages = !showOnlyBigImages;
-  console.log("'Show Only Big Images' setting toggled to", showOnlyBigImages);
+  showOnlyLargerImages = !showOnlyLargerImages;
+  console.log(
+    "'Show Only Big Images' setting toggled to",
+    showOnlyLargerImages
+  );
   showImages();
-  showOnlyBigImages === true
+  showOnlyLargerImages === true
     ? (imageSizeToggler.innerHTML =
-        "Displaying Only Images Larger Than 100x100")
+        "Displaying Thumbs Only For Images Larger Than 100x100")
     : (imageSizeToggler.innerHTML = "Displaying ALL Images");
 };
 
