@@ -16,7 +16,8 @@ const showImages = () => {
 
 const createImageGallery = images => {
   let output = "";
-  big_image.innerHTML = `<img src="${images[0]}" class="big-image" alt="image description">`;
+  let graySource = images[0] + "?grayscale";
+  big_image.innerHTML = `<img src="${graySource}" class="big-image" alt="image description">`;
   images.forEach(image => {
     output += `<img src="${image}" alt="Image" class="image__item"/>`;
   });

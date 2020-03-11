@@ -99,7 +99,7 @@ ul {
   list-style-type: none;
   padding: 10px;
   overflow: hidden;
-  background-color: #070a0e;
+  background-color: #6C7A89;
   position: fixed;
   top: 0;
   width: 100%;
@@ -120,5 +120,5 @@ li a {
 
 li a:hover {
   color: black;
-  background-color: #7c8a99;
+  background-color: #BCCAD9;
 }
