@@ -99,7 +99,7 @@ ul {
   list-style-type: none;
   padding: 10px;
   overflow: hidden;
-  background-color: #6C7A89;
+  background-color: #6c7a89;
   position: fixed;
   top: 0;
   width: 100%;
@@ -118,7 +118,19 @@ li a {
   padding: 30px 16px;
 }
 
+.greyscale-toggler {
+  margin: 20px;
+  color: white;
+  text-decoration: none;
+  padding: 30px 16px;
+}
+
 li a:hover {
   color: black;
-  background-color: #BCCAD9;
+  background-color: #bccad9;
+}
+
+.greyscale-toggler:hover {
+  color: black;
+  background-color: #bccad9;
 }

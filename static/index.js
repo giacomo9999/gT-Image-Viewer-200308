@@ -1,6 +1,9 @@
 const big_image = document.querySelector(".big-image-display");
 const thumbnail_grid = document.querySelector(".thumbnail-grid");
+const greyScaleToggler = document.querySelector(".greyscale-toggler");
+greyScaleToggler.innerHTML = "Toggle Greyscale: OFF";
 const loading = `<h1 class="loader">Loading...</h1>`;
+let greyScaleOn = false;
 
 const showImages = () => {
   if (thumbnail_grid.children.length === 0) {
@@ -9,19 +12,22 @@ const showImages = () => {
   axios
     .get("http://localhost:3000/data")
     .then(imageUrlArray => {
-      createImageGallery(imageUrlArray.data);
+      buildImageGallery(imageUrlArray.data);
     })
     .catch(error => console.error(error));
 };
 
-const createImageGallery = images => {
+const buildImageGallery = images => {
   let output = "";
-  let graySource = images[0] + "?grayscale";
-  big_image.innerHTML = `<img src="${graySource}" class="big-image" alt="image description">`;
+  let colorSetting = greyScaleOn === true ? "?grayscale" : "";
+  big_image.innerHTML = `<img src="${images[0] +
+    colorSetting}" class="big-image" alt="image description">`;
   images.forEach(image => {
-    output += `<img src="${image}" alt="Image" class="image__item"/>`;
+    output += `<img src="${image +
+      colorSetting}" alt="Image" class="image__item"/>`;
   });
   thumbnail_grid.innerHTML = output;
+  console.log(thumbnail_grid);
 };
 
 const changeBigImage = e => {
@@ -32,5 +38,15 @@ const changeBigImage = e => {
   }
 };
 
+const toggleGreyscale = () => {
+  greyScaleOn = !greyScaleOn;
+  console.log("Greyscale setting toggled to", greyScaleOn);
+  showImages();
+  greyScaleOn === true
+    ? (greyScaleToggler.innerHTML = "Toggle Greyscale: ON")
+    : (greyScaleToggler.innerHTML = "Toggle Greyscale: OFF");
+};
+
 document.addEventListener("DOMContentLoaded", showImages);
 thumbnail_grid.addEventListener("click", changeBigImage);
+greyScaleToggler.addEventListener("click", toggleGreyscale);
