@@ -1,6 +1,6 @@
 gT Photo Viewer is a lightweight image-viewing web app that runs in a browser.
 
-Here is how it works: the core of the app is a Node.js Express server ("server.js). When run, server.js sends three files (HTML, CSS, and a vanilla-JavaScript file named index.js) as static assets to the browser, which are rendered to the DOM in the usual fashion. Immediately therafter, an event listener fires in index.js to make a GET request back to server.js, which queries the database (in this case, the "database" is a PasteBin URL) for a string containing the list of image URLs to be displayed. Server.js then parses the string to JSON format and sends it back to index.js as a response object. Index.js iterates through the response object and adds the URLs to the appropriate HTML elements.
+Here is how it works: the core of the app is a Node.js Express server ("server.js"). When run, server.js sends three files (HTML, CSS, and a vanilla-JavaScript file named index.js) as static assets to the browser, which are rendered to the DOM in the usual fashion. Immediately therafter, an event listener fires in index.js to make a GET request back to server.js, which queries the database (in this case, the "database" is a PasteBin URL) for a string containing the list of image URLs to be displayed. Server.js then parses the string to JSON format and sends it back to index.js as a response object. Index.js iterates through the response object and adds the URLs to the appropriate HTML elements.
 
 If you'd like to try this app out, here is what to do:
 
