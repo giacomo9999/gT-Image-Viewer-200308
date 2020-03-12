@@ -20,10 +20,9 @@ Once the app is running:
 
 - Cache the image data so that index.js only needs to make ONE request to the backend. Right now index.js makes a GET request to the backend everytime the "grayscale" and "filter by size" functions are called.  If the images were sorted by size and cached the first time they came in, the backend would *only* need to be called the first time the page loads. That occurred to me about fifteen minutes ago. :P
 - Build out the "filter by size" functionality so users can specify more precisely the size in pixels of the images they want displayed. This would entail building some kind of modal or pull-down form to input the numbers, and I just didn't have the time to do that.
-- Get the "big" image to display in correct proportion (right now it's always coerced into a square format).  Again, I just ran short of time.
 - Display the thumbnails in a paginated or "carousel" format.  This is, I think, probably the easiest of my proposed changes...but again, no time.
 
-Anyway, it was great to have the opportunity to make this...and it was fun to work on. Hope you enjoy it/find it useful!
+Anyway, it was great to have the opportunity to make this...and it was fun to work on. Hope you enjoy it and find it useful!
 
 JG
 
