@@ -14,6 +14,8 @@ let greyScaleOn = false;
 let showOnlyLargerImages = false;
 
 let bigImageSrc = "https://picsum.photos/id/12/300/200";
+let bigImageWidth = "300px";
+let bigImageHeight = "200px";
 
 // Make GET request to server.js and call buildImageGallery function (which renders thumbnails to screen)
 const showImages = () => {
@@ -42,8 +44,14 @@ const buildImageGallery = images => {
     );
   }
 
+  bigImageHeight = bigImageSrc.split("/")[5] + "px";
+  bigImageWidth = bigImageSrc.split("/")[6] + "px";
+  console.log("buildImage--Big Image Stats: ", bigImageHeight, bigImageWidth);
+
   big_image.innerHTML = `<img src="${bigImageSrc +
-    colorSetting}" class="big-image" alt="image description">`;
+    colorSetting}" width=${bigImageWidth + "px"} height=${bigImageHeight +
+    "px"} class="big-image" alt="image description"/>`;
+
   images.forEach(image => {
     output += `<img src="${image +
       colorSetting}" alt="Image" class="image__item"/>`;
@@ -54,12 +62,18 @@ const buildImageGallery = images => {
 };
 
 const changeBigImage = e => {
-  console.log("Changing Image...", e.target.src);
+  console.log("cBI Changing Image...", e.target.src);
+
+  bigImageHeight = e.target.src.split("/")[5] + "px";
+  bigImageWidth = e.target.src.split("/")[6] + "px";
 
   const image = big_image.children[0];
+
   if (e.target.src) {
-    image.src = e.target.src;
-    bigImageSrc = e.target.src;
+    // image.src = e.target.src;
+    big_image.children[0].src = e.target.src;
+
+    // big_image.children[0].innerHTML = `<img src="${bigImageSrc}" width=${bigImageWidth} height=${bigImageHeight} class="big-image" alt="image description"/>`;
   }
 };
 

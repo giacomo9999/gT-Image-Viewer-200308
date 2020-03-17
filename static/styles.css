@@ -20,8 +20,8 @@ main {
 }
 
 .big-image {
-  width: 25%;
-  height: 32rem;
+  /* min-width: 50px;
+  min-height: 50px; */
   display: block;
   margin: auto;
   border: solid #1c2a39;
