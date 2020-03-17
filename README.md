@@ -23,7 +23,7 @@ Once the app is running:
 - Get the "big" image to display in correct proportion (right now it's coerced to a fixed percentage of the screen width).  Again, I just ran short of time (and--let's face it--my CSS-fu has a few gaps)
 - Display the thumbnails in a paginated or "carousel" format.  This is, I think, probably the easiest of my proposed changes...but again, no time.
 
-Anyway, it was great to have the opportunity to make this...and it was fun to work on. Hope you enjoy it/find it useful!
+Anyway, it was great to have the opportunity to make this...and it was fun to work on. Hope you enjoy it and find it useful!
 
 JG
 
